@@ -1,0 +1,10 @@
+version: "2"  # Ensure you are using version 2 syntax
+sql:
+  - schema: "./db/migration/"  # Path to your schema/migration files
+    queries: "./db/query/"  # Path to your SQL query files
+    engine: "postgresql"      # Database engine
+    gen:
+      go:
+        package: "db"         # Package name for the generated Go code
+        out: "./db/sqlc"      # Output path for the generated files
+        emit_json_tags: true  # Emit JSON tags for struct fields
